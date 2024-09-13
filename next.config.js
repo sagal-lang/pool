@@ -4,10 +4,16 @@ const withNextra = require("nextra")({
   // unstable_staticImage: true,
 });
 
+
+const isProduction = process.env.NODE_ENV === "production";
+const assetPrefix = isProduction ? "/pool" : "";
+
 module.exports = withNextra({
   images: {
     unoptimized: true
   },
+  assetPrefix,
+  basePath: assetPrefix,
   output: "export"
 });
 
