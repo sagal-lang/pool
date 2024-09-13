@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{css,cjs,mjs,js,jsx,ts,tsx,json,md}\" --config prettier.config.json --ignore-path .prettierignore",
-    "export": "next export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
