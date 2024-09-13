@@ -1,0 +1,31 @@
+{
+  "name": "pool",
+  "version": "0.1.0",
+  "description": "Sagal Programming Langauge's Pool",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{css,cjs,mjs,js,jsx,ts,tsx,json,md}\" --config prettier.config.json --ignore-path .prettierignore",
+    "export": "next export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sagal/pool.git"
+  },
+  "author": "Ali Moallim",
+  "license": null,
+  "dependencies": {
+    "next": "^14.2.11",
+    "nextra": "^2.13.4",
+    "nextra-theme-docs": "^2.13.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
