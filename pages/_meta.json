@@ -1,0 +1,24 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "docs": {
+    "title": "Documentation",
+    "type": "page"
+  },
+  "specs": {
+    "title": "Specifications",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "github_link": {
+    "title": "Sagal's Github",
+    "href": "https://github.com/sagal-lang",
+    "newWindow": true,
+    "display": "hidden"
+  }
+}
