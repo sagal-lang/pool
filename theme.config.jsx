@@ -5,7 +5,7 @@ export default {
     </span>
   ),
   project: {
-    link: "https://github.com/sagal/pool"
+    link: "https://github.com/sagal-lang/pool"
   },
   footer: {
     text: <p>2024© Sagal</p>
