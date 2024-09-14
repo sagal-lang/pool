@@ -1,3 +1,5 @@
+const { env } = require("process");
+
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.jsx"
@@ -13,7 +15,10 @@ module.exports = withNextra({
   },
   assetPrefix,
   basePath: assetPrefix,
-  output: "export"
+  output: "export",
+  env: {
+    BASE_PATH: assetPrefix
+  }
 });
 
 // If you have other Next.js configurations, you can pass them as the parameter:

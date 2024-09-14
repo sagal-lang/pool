@@ -15,6 +15,9 @@
     "title": "About",
     "type": "page"
   },
+  "*": {
+    "type": "page"
+  },
   "github_link": {
     "title": "Sagal's Github",
     "href": "https://github.com/sagal-lang",
