@@ -17,7 +17,8 @@ module.exports = withNextra({
   basePath: assetPrefix,
   output: "export",
   env: {
-    BASE_PATH: assetPrefix
+    BASE_PATH: assetPrefix,
+    BASE_URI: "https://sagal-lang.github.io"
   }
 });
 

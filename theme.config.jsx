@@ -1,13 +1,22 @@
-import navHeader from "./components/shared/navHeader";
+import Logo from "./components/shared/logo";
+import Head from "./components/shared/head";
+import Footer from "./components/shared/footer";
 
 export default {
-  logo: navHeader,
   project: {
     link: "https://github.com/sagal-lang/pool"
   },
-  footer: {
-    text: <p>© 2024 Sagal</p>
-  },
+  logo: Logo,
+  head: Head,
+  footer: { text: Footer },
   docsRepositoryBase: "https://github.com/sagal-lang/pool/edit/main"
+  // banner: {
+  //   key: '2.0-release',
+  //   text: (
+  //     <a href="https://nextra.site" target="_blank">
+  //       🎉 Nextra 2.0 is released. Read more →
+  //     </a>
+  //   )
+  // }
   // ... other theme options
 };

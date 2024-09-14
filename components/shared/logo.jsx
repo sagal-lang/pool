@@ -6,8 +6,8 @@ export default function View() {
       <img
         src={`${BASE_PATH}/imgs/logo-circle.svg`}
         alt="logo"
-        height={32}
-        width={32}
+        height={24}
+        width={24}
       />
       <b className="mx-2">Sagal</b>
     </div>
