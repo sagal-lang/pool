@@ -7,6 +7,7 @@ export default function View() {
       <h1 className="text-4xl sm:text-6xl font-bold tracking-tight my-4">
         Sagal
       </h1>
+      <p>v0.1.0</p>
       <p className="mt-4 text-xl leading-8">
         The Grammar of Code: A Framework for Semantics-Driven Programming
       </p>
