@@ -1,5 +1,19 @@
 {
-  "principles": "Core Principles",
-  "particle": "Particle",
-  "particles": "Particles"
+  "introduction": "Introduction",
+  "glossary": "Glossary",
+  "--1": {
+    "type": "separator"
+  },
+  "clause": "Clause",
+  "particles": "Core Particles",
+  "content-words": "Content Words",
+  "primitives": "Primitives",
+  "meta-particle": "Meta Particles",
+  "--2": {
+    "type": "separator"
+  },
+  "syntax-semantics": "Syntax & Semantics",
+  "edge-cases-error-handling": "Edge Cases & Error Handling",
+  "examples-use-cases": "Examples & Use Cases",
+  "references": "References"
 }
