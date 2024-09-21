@@ -4,7 +4,7 @@
   "--1": {
     "type": "separator"
   },
-  "clause": "Clause",
+  "clauses": "Clauses",
   "particles": "Core Particles",
   "content-words": "Content Words",
   "primitives": "Primitives",
