@@ -3,8 +3,7 @@
 ## Introduction
 
 A clause is the fundamental building block of the Sagal framework, akin to sentences in natural language and expressions or statements in existing programming languages.
-Just as sentences convey complete thoughts in language, clauses in Sagal define self-contained, executable logic.
-
+Just as sentences convey complete thoughts in language, a clause in Sagal represents a unit of meaning that defines self-contained, executable logic.
 In this document, we will explore how clauses are constructed and composed within Sagal, using `YAML` for structural representation.
 We will also draw analogies to natural language, with code examples from `Python 3.11` and `Scheme R7RS` to illustrate key concepts.
 
