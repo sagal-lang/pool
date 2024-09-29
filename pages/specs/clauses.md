@@ -4,6 +4,7 @@
 
 A clause is the fundamental building block of the Sagal framework, akin to sentences in natural language and expressions or statements in existing programming languages.
 It represents the **primitive unit of meaning**.
+
 In this document, we will explore how clauses are constructed and composed within Sagal, using `YAML` for structural representation.
 We will draw analogies to natural language and provide comparisons with code examples from `Python 3.x` and `Scheme R7RS` where necessary.
 
