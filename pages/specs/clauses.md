@@ -3,19 +3,18 @@
 ## Introduction
 
 A clause is the fundamental building block of the Sagal framework, akin to sentences in natural language and expressions or statements in existing programming languages.
-Just as sentences convey complete thoughts in language, a clause in Sagal represents the **primitive unit of meaning**.
+It represents the **primitive unit of meaning**.
 In this document, we will explore how clauses are constructed and composed within Sagal, using `YAML` for structural representation.
 We will draw analogies to natural language and provide comparisons with code examples from `Python 3.x` and `Scheme R7RS` where necessary.
 
 ## Clause Structure
 
-In Sagal, a clause is defined as a structured unit with two primary components: the **head** and the **body**.
-It can be represented as follows:
+A clause consists of two primary components: the **head** and the **body**, and it can be represented as follows:
 
 ```yaml
 id: <clause_id> # Unique identifier for the clause
 head: <particle> # Grammatical particle that governs the clause
-body:
+body: # Body of the clause
   - "hello world!" # Content word representing a string
   - 0xFF01 # Clause reference (refers to another clause by id)
   # Nested clause example
@@ -32,7 +31,7 @@ body:
 
 The signature of a clause is governed by the **grammatical particle** in the head.
 This signature specifies how the clause is structured, including the relationship between the elements and/or clauses within the body.
-Just as a function signature defines how a function behaves in traditional programming languages, the signature in Sagal ensures that each clause has a clear and precise meaning, enabling correct interpretation and execution.
+Just as a function signature defines how a function behaves in traditional programming languages, the signature in Sagal ensures that each clause has a defined structure and precise meaning, enabling correct interpretation and execution.
 
 ## Clause Modularity
 
@@ -48,7 +47,7 @@ John went to the store. He bought some bread.
 The pronoun `he` refers to `John`, connecting the two sentences and allowing them to form a coherent thought.
 Similarly, in Sagal, one clause can reference another to maintain logical flow while keeping the structure modular.
 
-This concept of clause references is comparable to the use of variables or pointers in existing programming languages, where an element defined earlier in the code can be referred to later by name or reference enhancing reusability.
+This concept of clause references is comparable to the use of variables or imports in existing programming languages, where an element defined earlier in the code can be referred to later by name enhancing reusability.
 
 ## Clause Evaluation
 
