@@ -9,30 +9,29 @@ import { SPECS_VERSION } from "../../components/constants"
 ## 1. Abstract
 
 Sagal is a programming framework designed to bring clarity and intent to code by aligning it with natural language constructs.
-By focusing on grammatical particles and content words, Sagal allows developers to create semantically meaningful and intuitive executable clauses.
-The framework abstracts system-specific features through primitives, enabling developers to work with complex operations like concurrency or the actor model, without managing the underlying system mechanics.
-This document outlines Sagal’s core principles, defining its structure, goals, and the high-level rules that guide its semantics-driven approach to programming.
+By focusing on grammatical particles, Sagal allows developers to create semantically meaningful and intuitive executable clauses.
+The framework abstracts system-specific features through primitives, enabling developers to describe complex operations like concurrency or the actor model, without needing to manage the underlying system mechanics directly.
+This document provides a detailed specification of Sagal's structure, goals, and semantics-driven approach that guide its implementation.
 
 ## 2. Introduction
 
-Sagal is a programming framework designed to bridge the gap between the precision of machine execution and the fluidity of human thought. 
-By structuring code with grammatical particles, similar to those found in natural language, Sagal enables the creation of executable clauses that are both intuitive and semantically meaningful, while satisfying the strict demands of machine processing.
+Sagal is a programming framework that structures code using grammatical particles, similar to those found in natural languages.
+These particles enable the creation of executable clauses that are both intuitive and semantically meaningful, while still meeting the strict requirements of machine processing.
 
-In Sagal, grammatical particles act as the **letters of semantics**, providing a foundation for logical and expressive programming. 
+In Sagal, grammatical particles act as the **building blocks of semantics**, providing a foundation for logical and expressive programming. 
 This approach empowers developers to write clear, precise code that mirrors human expression, while ensuring that the code retains the rigor and reliability needed for machine execution. 
-Sagal simplifies programming by leveraging the structure of natural language, fostering more meaningful interactions between humans and machines.
 
 ### 2.1 Purpose
 
 The purpose of Sagal is to redefine how code conveys meaning by aligning programming more closely with natural language. 
-In traditional programming languages, developers are often constrained by rigid syntactic rules that prioritize machine execution at the expense of human readability and semantics. 
+Traditional programming languages often prioritize rigid structures and execution mechanics designed for machine processing, which can overshadow the clarity and intent behind human-readable code and semantics.
 This creates a disconnect between how humans naturally think and how machines process instructions—a gap that Sagal seeks to bridge.
 
 ### 2.2 Scope
-
-This document provides the formal specification for the Sagal Framework, defining its rules and structure as a programming framework that utilizes natural language constructs to create intuitive and semantically meaningful executable code. 
-While the document outlines the foundational linguistic principles of Sagal, it does not cover implementation details, performance optimizations, or low-level interactions.
-Instead, system-specific functionality are abstracted through primitives, which will be discussed later in the document.
+This document serves as the formal specification for the Sagal Framework.
+It outlines the core grammar, logic, and linguistic principles that define how Sagal operates. 
+However, it does not cover implementation details, performance optimizations, or low-level interactions.
+Instead, the document abstracts system-specific functionality through the use of primitives, which will be discussed in later sections.
 
 ## 3. Goals and Non-Goals
 
@@ -41,7 +40,7 @@ Instead, system-specific functionality are abstracted through primitives, which 
 #### 3.1.1 Semantics-Driven
 
 Sagal ensures that parsing rules and evaluation logic are closely tied to the meaning behind the code.
-By unifying these processes through linguistic constructs, such as grammatical particles and content words, Sagal streamlines and simplifies how developers define both structure and semantics. 
+By unifying these processes through linguistic constructs, Sagal streamlines and simplifies how developers define both structure and semantics. 
 
 #### 3.1.2 Expressive Programming
 
@@ -51,12 +50,13 @@ By leveraging its constructs, it enables developers to design languages that clo
 #### 3.1.3 System-Specific Primitives
 
 Sagal abstracts system-specific details through the use of **primitives** that encapsulate system functionality and capabilities. 
-These primitives allow developers to interact with features like asynchronous operations, concurrency or the actor model using linguistic constructs, without needing to manage the underlying system mechanics directly.
+These primitives allow developers to interact with features like asynchronous operations, concurrency or the actor model using streamlined constructs, without needing to manage the underlying system mechanics directly.
 
 
 ### 3.2 Non-Goals
-Sagal does not focus on implementation details, performance optimizations, or low-level interactions, such as interpreter design.
-While it touches on primitives that address system-specific features and programming paradigms, the framework is not intended to provide granular control over system internals, optimization or suggest specific implementation strategies, leaving these decisions to the underlying platform.
+Sagal does not focus on implementation specifics, performance tuning, or low-level details, such as interpreter or compiler design.
+The framework abstracts system-specific interactions, leaving out implementation strategies to the broader community.
+
 
 ## 4. Table of Contents
 
