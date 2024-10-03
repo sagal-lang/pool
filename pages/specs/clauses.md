@@ -8,7 +8,7 @@ It represents the **primitive unit of meaning**.
 In this document, we will explore how clauses are constructed and composed within Sagal, using `YAML` for structural representation.
 We will draw analogies to natural language and provide comparisons with code examples from `Python 3.x` and `Scheme R7RS` where necessary.
 
-## Clause Structure
+## Structure
 
 A clause consists of two primary components: the **head** and the **body**, and it can be represented as follows:
 
@@ -33,7 +33,7 @@ body: # Body of the clause
 The signature of a clause is governed by the **grammatical particle** in the head.
 This signature specifies how the clause is structured, including the relationship between the elements and/or clauses within the body.
 
-### Clause Modularity
+### Modularity
 
 In Sagal, a program is composed of a series of clauses, with one clause serving as the entry point of execution.
 Each clause can either reference other clauses or contain nested clauses that are local to itself.
@@ -60,7 +60,7 @@ And in Scheme:
 (display message)
 ```
 
-## Clause Evaluation
+## Evaluation
 
 In Sagal, the structure and meaning of a program are built from a stack of clauses, with each clause governed by a grammatical particle.
 Grammatical particles in Sagal operate much like their counterparts in natural languages, such as prepositions or conjunctions.
