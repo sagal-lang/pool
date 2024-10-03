@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A clause is the fundamental building block of the Sagal framework, akin to sentences in natural language and expressions or statements in  programming languages.
+A clause is the fundamental building block of the Sagal framework, akin to sentences in natural language and expressions or statements in programming languages.
 It represents the **primitive unit of meaning**.
 
 In this document, we will explore how clauses are constructed and composed within Sagal, using `YAML` for structural representation.
@@ -36,20 +36,23 @@ This signature specifies how the clause is structured, including the relationshi
 ### Clause Modularity
 
 In Sagal, a program is composed of a series of clauses, with one clause serving as the entry point of execution.
-Each clause can either reference other clauses or contain nested clauses that are local to itself. 
+Each clause can either reference other clauses or contain nested clauses that are local to itself.
 This structure is akin to how paragraphs in natural language may use devices like pronouns, which refer back to earlier elements in the text to maintain logical continuity.
 Clause references in Sagal work like variables or imports in traditional programming languages, where elements defined earlier in the code can be reused later by name, enhancing both reusability and modularity.
 
 For example, consider this natural language sentence:
+
 > John went to the store. **He** bought some bread.
 
 Now, compare it with this Python code:
+
 ```py
 # References a clause (class)
-from collections import defaultdict 
+from collections import defaultdict
 ```
 
 And in Scheme:
+
 ```scheme
 (define message "Hello, World!")
 
@@ -60,12 +63,10 @@ And in Scheme:
 ## Clause Evaluation
 
 In Sagal, the structure and meaning of a program are built from a stack of clauses, with each clause governed by a grammatical particle.
-These particles determine the function of a clause—whether it acts as data, a variable, a function call, parameter passing, or other logical operations.
-
 Grammatical particles in Sagal operate much like their counterparts in natural languages, such as prepositions or conjunctions.
-In human languages, some particles are not explicitly written but are understood from context.
-In contrast, Sagal ensures that every aspect of meaning or function is explicitly represented by a grammatical particle, ensuring clarity in both in both the program’s syntax and semantics.
 
+In human languages, some particles are not explicitly written but are understood from context.
+In contrast, Sagal ensures that every aspect of meaning is explicitly represented by a grammatical particle, which determine the function of a clause—whether it acts as data, a variable, a function call, parameter passing, or other logical operations.
 
 ### Example
 
@@ -82,14 +83,16 @@ id: 0x01 # Unique identifier for this clause
 head: <temporal_particle> # Temporal particle clause: "when"
 body:
   # The condition clause that must be satisfied
-  - head: <predicate_particle> # predicate particle, explained later in the specs
+  - head: <predicate_particle> # predicate particle
     body:
       - <verb_particle_clause_id> # Verb particle clause: "rise"
       - <noun_particle_clause_id> # Noun particle clause: "sun" (subject of the verb)
   # The clause to be executed if the condition is met
-  - head: <imperative_particle> # imperative particle, explained later in the specs
+  - head: <imperative_particle> # imperative particle
     body:
       - <verb_particle_clause_id> # Verb particle clause: "jog"
       - <preposition_particle_clause_id> # Clause indicating duration (for 30 minutes)
       - <preposition_particle_clause_id> # Clause indicating location (around the block)
 ```
+
+We will discuss the particles used in this example in greater detail in the upcoming sections.
