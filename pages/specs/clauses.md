@@ -1,6 +1,6 @@
 # Clauses
 
-## Introduction
+## 1. Introduction
 
 A clause is the fundamental building block of the Sagal framework, akin to sentences in natural language and expressions or statements in programming languages.
 It represents the **primitive unit of meaning**.
@@ -8,7 +8,7 @@ It represents the **primitive unit of meaning**.
 In this document, we will explore how clauses are constructed and composed within Sagal, using `YAML` for structural representation.
 We will draw analogies to natural language and provide comparisons with code examples from `Python 3.x` and `Scheme R7RS` where necessary.
 
-## Structure
+## 2. Structure
 
 A clause consists of two primary components: the **head** and the **body**, and it can be represented as follows:
 
@@ -28,12 +28,12 @@ body: # Body of the clause
   This will be expanded on in later sections of the specification.
 - **body:** A list that can contain nested clauses, references to other clauses, or content words, which provide additional context for the clause.
 
-### Signature
+### 2.2. Signature
 
 The signature of a clause is governed by the **grammatical particle** in the head.
 This signature specifies how the clause is structured, including the relationship between the elements and/or clauses within the body.
 
-### Modularity
+### 2.2. Modularity
 
 In Sagal, a program is composed of a series of clauses, with one clause serving as the entry point of execution.
 Each clause can either reference other clauses or contain nested clauses that are local to itself.
@@ -60,7 +60,7 @@ And in Scheme:
 (display message)
 ```
 
-## Evaluation
+## 3. Evaluation
 
 In Sagal, the structure and meaning of a program are built from a stack of clauses, with each clause governed by a grammatical particle.
 Grammatical particles in Sagal operate much like their counterparts in natural languages, such as prepositions or conjunctions.
@@ -68,7 +68,7 @@ Grammatical particles in Sagal operate much like their counterparts in natural l
 In human languages, some particles are not explicitly written but are understood from context.
 In contrast, Sagal ensures that every aspect of meaning is explicitly represented by a grammatical particle, which determine the function of a clause—whether it acts as data, a variable, a function call, parameter passing, or other logical operations.
 
-### Example
+### 3.1. Examples
 
 To demonstrate, let's take an imperative sentence and represent it in Sagal’s structure:
 

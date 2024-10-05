@@ -1,13 +1,13 @@
 # Noun Particles
 
-## Introduction
+## 1. Introduction
 
 Noun particles in Sagal serve as fundamental building blocks for representing or referring to entities within the framework.
 These entities can include data, objects, concepts, operations, and more—similar to how nouns function in natural languages.
 
 Noun particles are essential for establishing context, subject matter, and meaning within a clause, making them key elements in constructing semantically meaningful expressions in Sagal.
 
-## Structure
+## 2. Structure
 
 Below is the general structure for how noun particles are defined:
 
@@ -20,16 +20,16 @@ body:
   - <binding_clause> # Represents the value or reference associated with the noun
 ```
 
-### Signature
+### 2.1. Signature
 
-#### 1. Identifier
+#### 2.1.1. Identifier
 
 The `<identifier>` is the name or label for the noun.
 It provides the specific or general reference for the noun particle and could represent concepts like `book`, `car`, `person`, `Ali`.
 The `<identifier>`, along with the `<clause_id>`, serves as the primary means of referencing this particular entity within the program.
 It function much like the subject in a sentence or a variable name in a programming language.
 
-#### 2. Descriptor Clause
+#### 2.1.2. Descriptor Clause
 
 The `<descriptor_clause>` defines and qualifies the noun, acting as both a type system and a means to add meaningful context.
 At its simplest, it handles basic types like strings, integers, and collections, but its true strength lies in its ability to represent complex structures.
@@ -45,7 +45,7 @@ For example:
 In essence, the descriptor clause is not just a type indicator, but a tool to enrich the noun with specific traits or relationships, making it a versatile feature within Sagal’s structure.
 For simplicity, we will focus on basic types for now, with further elaboration to follow in the subsequent sections.
 
-#### 3. Binding Clause
+#### 2.1.3. Binding Clause
 
 The `<binding_clause>` in Sagal represents the actual value or reference tied to a noun.
 It serves as the means by which a noun is "bound" to a specific instance, object, or clause.
@@ -55,19 +55,19 @@ At its simplest, the binding clause can contain direct values such as numbers or
 However, it can also refer to more complex clauses or objects, similar to variables or references in traditional programming languages.
 When the binding is missing—such as when dealing with indefinite nouns or when the value has yet to be assigned—the descriptor clause becomes critical, providing context and meaning for the noun.
 
-## Types
+## 3. Types
 
-### 1. Definiteness
+### 3.1. Definiteness
 
 In Sagal, definiteness plays a crucial role in distinguishing between specific and general references, much like define and indefine articles in natural languages (e.g. "the" vs "a" in English).
 The definiteness of a noun is determined by the presence or absence of a **binding clause**.
 
-#### Definite Nouns
+#### 3.1.1. Definite Nouns
 
 Definite nouns refer to specific entities that are clearly identifiable within the context.
 In Sagal, a noun is considered definite when the <binding_clause> is provided, explicitly associating the noun with a particular value or reference.
 
-#### Indefinite Nouns
+#### 3.1.2. Indefinite Nouns
 
 Indefinite nouns, on the other hand, refer to general or non-specific entities.
 These are nouns that lack a binding clause, leaving them open to interpretation or assignment later.
@@ -83,7 +83,7 @@ body:
   - book # The identifier for the noun
   - object # Descriptor indicating it's a physical object
   - 0xA001 # Binding clause; the noun refers to a specific book
----
+
 # Example of a indefinite noun:
 id: 0x04
 particle: noun
@@ -93,24 +93,105 @@ body:
   # No binding clause, making this an indefinite noun
 ```
 
-### 2. Reference
+### 3.2. Reference
 
-> TODO
+In Sagal, references are used to link one clause or noun to another, creating connections between different entities within a program.
+These references allow for modularity and reusability, similar to how variables or pointers work in traditional programming languages.
+References in Sagal are crucial for managing relationships between clauses, whether they are simple values or more complex structures.
 
-### 3. Possession
+#### 3.2.1 Direct References
 
-> TODO
+A direct reference is when a noun is explicitly tied to another clause or entity using the binding clause.
+This binding clause contains a reference to another clause by its unique identifier (`id`).
 
-### 4. Collectivity and Composition
+#### 3.2.2 Indirect References
 
-> TODO
+It’s also possible to reference clauses indirectly by using another clause or mulitple clauses as intermediaries.
 
-## Derived Noun Types
+Here are some examples:
 
-<!-- Context/Denotation: Defines the role, type, or abstract concept the noun represents. -->
+```yaml
+# A book entity that is referenced later
+id: 0xA001
+head: noun
+body:
+  - book
+  - object
+  - "The Sagal Specification"
 
-> TODO
+# Referencing the previously defined book
+id: 0x05
+head: noun
+body:
+  - "favorite_book"
+  - object
+  - 0xA001  # Binding clause referencing the book entity
 
-## Evaluation
+# An indirect reference to the previously defined book
+id: 0x06
+head: noun
+body:
+  - open_book
+  - object
+  - 0x05  # References the favorite_book, allowing indirect access to the book
+```
+
+### 3.3. Possession
+
+Possession allows a noun to represent ownership or association between two entities, similar to possessive constructs in natural languages like English ("John's car").
+In Sagal, one way to represent possession is to utilize the `<descriptor_clause>`, which defines the association of the noun to another entity.
+There are other ways to represent possession, which we will cover in later sections.
+In the meantime, let’s take an example where we define a "book owned by John." It can be represented as follows:
+
+```yaml
+# Assuming the type "book owned by John" has clause id 0xA003
+id: 0x07
+head: noun
+body:
+  - current_book # Identifier or label for this particular book
+  - 0xA003 # Reference to "book owned by John" type clause
+  - 0xA004 # Optional value or reference
+```
+
+### 3.4. Collectivity and Composition
+
+In Sagal, nouns can represent not just individual entities but also collective or composite groups, much like collective nouns in natural languages (e.g., "team," "group," "set").
+This allows Sagal to handle entities that are composed of multiple items, whether they are homogeneous (e.g., a list of numbers) or heterogeneous (e.g., a group of people and objects).
+
+#### 3.4.1 Collectivity
+
+Collective nouns in Sagal represent a single entity made up of multiple similar items.
+The `<descriptor_clause>` can be used to specify that the noun refers to a collection or list of items.
+
+```yaml
+id: 0x09
+head: noun
+body:
+  - team # Collective noun that groups individuals
+  - list_of_people # Descriptor clause defining the collective nature
+  - [0xA02, 0xA03, 0xA04] # References to individual people
+```
+
+#### 3.4.2 Composition
+
+For more complex structures, composition allows a noun to represent different types of elements grouped together, much like a composite object in programming.
+
+```yaml
+id: 0x10
+head: noun
+body:
+  - vehicle_parts # A group of different parts of vehicle
+  - list # Descriptor indicating composition
+  - [0xB01, 0xB02] # References to different types of parts
+```
+
+## 4. Derived Noun Types
+
+Derived noun types in Sagal expand on the core noun particle structure, enabling more nuanced representations of meaning.
+These derived types include concepts such as demonstrative nouns, relative nouns, collective nouns, compound nouns, and quantifiers.
+By leveraging the combination of descriptor clauses and binding clauses, developers can construct and manage more advanced noun forms seamlessly.
+This flexibility extends the noun representation to handle both natural language-inspired structures and more specialized noun types found in programming languages, such as typed/dynamic variables, pointers, constants, enumerations, and etc.
+
+## 5. Evaluation
 
 > TODO
