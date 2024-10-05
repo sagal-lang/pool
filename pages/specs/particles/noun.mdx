@@ -4,7 +4,7 @@ import { Callout } from 'nextra/components'
 
 ## 1. Introduction
 
-Noun particles in Sagal serve as fundamental building blocks for representing or referring to entities within the framework.
+Noun particles in Sagal serve as the fundamental building blocks for representing or referring to entities within the framework.
 These entities can include data, objects, concepts, operations, and more—similar to how nouns function in natural languages.
 
 Noun particles are essential for establishing context, subject matter, and meaning within a clause, making them key elements in constructing semantically meaningful expressions in Sagal.
@@ -61,7 +61,7 @@ When the binding is missing—such as when dealing with indefinite nouns or when
 
 ### 3.1. Definiteness
 
-In Sagal, definiteness plays a crucial role in distinguishing between specific and general references, much like define and indefine articles in natural languages (e.g. "the" vs "a" in English).
+In Sagal, definiteness plays a crucial role in distinguishing between specific and general references, much like definite and indefinite articles in natural languages (e.g. "the" vs "a" in English).
 The definiteness of a noun is determined by the presence or absence of a **binding clause**.
 
 #### 3.1.1. Definite Nouns
@@ -202,15 +202,15 @@ When a noun particle is evaluated, Sagal examines its key components, the `<desc
 This can include resolving the noun’s type, attributes, or relationships (e.g., "the car owned by John").
 - **Binding Evaluation:** If the noun is bound to a specific value or reference, the evaluation process resolves this binding to provide the final, concrete meaning of the noun within the program.
 For definite nouns, this means resolving a reference to a specific instance.
-For indefinite nouns, the descriptor clause might serve as a placeholder until the noun is later bound.
+For indefinite nouns, the `<descriptor_clause>` may provide temporary context until the noun is later bound.
 
-### 5.1 Scope
+### 5.1. Scope
 
 Noun clauses in Sagal are evaluated within the scope of the clauses in which they are defined.
 The evaluation process ensures that references to other clauses or external values are properly resolved.
 This includes evaluating references to previously defined clauses or dynamically changing references as the program progresses.
 
-### 5.2 Context
+### 5.2. Context
 
 Context plays a significant role in Sagal’s evaluation process.
 While the `<descriptor_clause>` is the primary element that defines the noun context, the overall meaning of a noun is also influenced by the surrounding clauses.
