@@ -1,3 +1,5 @@
+import { Callout } from 'nextra/components'
+
 # Noun Particles
 
 ## 1. Introduction
@@ -65,7 +67,7 @@ The definiteness of a noun is determined by the presence or absence of a **bindi
 #### 3.1.1. Definite Nouns
 
 Definite nouns refer to specific entities that are clearly identifiable within the context.
-In Sagal, a noun is considered definite when the <binding_clause> is provided, explicitly associating the noun with a particular value or reference.
+In Sagal, a noun is considered definite when the `<binding_clause>` is provided, explicitly associating the noun with a particular value or reference.
 
 #### 3.1.2. Indefinite Nouns
 
@@ -194,4 +196,26 @@ This flexibility extends the noun representation to handle both natural language
 
 ## 5. Evaluation
 
-> TODO
+When a noun particle is evaluated, Sagal examines its key components, the `<descriptor_clause>` and `<binding_clause>`, to determine the noun’s identity, type, and whether it is associated with a specific value or reference.
+
+- **Descriptor Evaluation:** If present, the `<descriptor_clause>` adds further meaning to the noun.
+This can include resolving the noun’s type, attributes, or relationships (e.g., "the car owned by John").
+- **Binding Evaluation:** If the noun is bound to a specific value or reference, the evaluation process resolves this binding to provide the final, concrete meaning of the noun within the program.
+For definite nouns, this means resolving a reference to a specific instance.
+For indefinite nouns, the descriptor clause might serve as a placeholder until the noun is later bound.
+
+### 5.1 Scope
+
+Noun clauses in Sagal are evaluated within the scope of the clauses in which they are defined.
+The evaluation process ensures that references to other clauses or external values are properly resolved.
+This includes evaluating references to previously defined clauses or dynamically changing references as the program progresses.
+
+### 5.2 Context
+
+Context plays a significant role in Sagal’s evaluation process.
+While the `<descriptor_clause>` is the primary element that defines the noun context, the overall meaning of a noun is also influenced by the surrounding clauses.
+This contextual information shapes the interpretation of the noun, helping determine how it fits into the broader logic of the program.
+
+<Callout emoji="ℹ️" type="info">
+  **Note** We will delve deeper into concrete examples of the noun evaluation process once we cover additional particles and structures in later sections.
+</Callout>
